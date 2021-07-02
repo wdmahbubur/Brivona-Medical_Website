@@ -1,0 +1,1164 @@
+@import "partials/mixins";
+@import "partials/variables";
+@import "partials/classes";
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: $font-family;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $font-family;
+    overflow-x: hidden;
+}
+
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.table-cell {
+    display: table-cell;
+}
+.button-basic {
+    border-radius: 0;
+    padding: 16px 25px;
+    @include font(13, 600);
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $secondery-color;
+    opacity: 0.95;
+}
+.section-heading {
+    span {
+        @include font(14, 400);
+        color: $font-color-1;
+        letter-spacing: 1px;
+    }
+    h1 {
+        @include font(35, 600);
+        color: $secondery-color;
+        line-height: 42px;
+        padding-top: 10px;
+    }
+    p {
+        @include font(15, 400);
+        line-height: 25px;
+        color: $font-color-1;
+    }
+}
+.dual-button {
+    padding-top: 23px;
+    .btn-1 {
+        @extend .button-basic;
+        @include border(1px, $secondery-color);
+        color: $secondery-color;
+        padding: 13px 30px;
+        border-radius: 0 !important;
+    }
+    .btn-2 {
+        @extend .button-basic;
+        @extend .primary-button;
+        padding: 13px 30px;
+    }
+    .btn-1,
+    .btn-2 {
+        &:hover {
+            background: #033b4a !important;
+            color: $font-color-white;
+        }
+    }
+}
+@keyframes slider-1-animation-1 {
+    from {
+        margin-left: 500px;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+@keyframes slider-1-animation-2 {
+    from {
+        margin-left: -1000px;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+@keyframes slider-1-animation-3 {
+    0% {
+        margin-top: 500px;
+        opacity: 0.1;
+    }
+    35% {
+        margin-top: 500px;
+        opacity: 0.5;
+    }
+    80% {
+        margin-top: 0%;
+        opacity: 0.6;
+    }
+    100% {
+        margin-top: 0%;
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes slide-left-2 {
+    from {
+        margin-right: -400px;
+    }
+    to {
+        margin-right: 0%;
+    }
+}
+@keyframes slider-2-animation-1 {
+    from {
+        margin-right: 300px;
+    }
+    to {
+        margin-right: 0px;
+    }
+}
+@keyframes slider-2-animation-3 {
+    0% {
+        margin-top: 500px;
+        opacity: 0.1;
+    }
+    35% {
+        margin-top: 500px;
+        opacity: 0.5;
+    }
+    80% {
+        margin-top: 0px;
+        opacity: 0.6;
+    }
+    100% {
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+@keyframes slide-right-2 {
+    from {
+        margin-left: -400px;
+    }
+    to {
+        margin-left: 0%;
+    }
+}
+//Top Nav
+.top-nav {
+    background: $secondery-color-2;
+    color: rgba(255, 255, 255, 0.95);
+    @include font(13, 400);
+    .location,
+    .schedule {
+        i {
+            color: $primary-color;
+        }
+    }
+    .social-media-icon {
+        i {
+            @include font(14, 400);
+            margin: 0 8px;
+            &:hover {
+                color: $primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+    .button {
+        .btn {
+            @extend .button-basic;
+            @extend .primary-button;
+        }
+    }
+}
+//Main-Menu
+.main-menu {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10000000;
+    box-shadow: 0px 13px 25px -12px rgba(0, 0, 0, 0.25);
+    .navbar {
+        padding: 20px 0px;
+        .navbar-brand {
+            max-height: 48px;
+        }
+        .navbar-nav {
+            .nav-item {
+                padding: 0px 16px;
+                @include font(16, 700);
+                a {
+                    color: #033b4a !important;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 0%;
+                        height: 2px;
+                        background: $primary-color;
+                        margin: auto;
+                        left: 0;
+                        right: 0;
+                        position: relative;
+                        @include transition(0.4s);
+                    }
+                    &:hover {
+                        &::after {
+                            width: 100% !important;
+                        }
+                    }
+                }
+            }
+            .active {
+                a {
+                    color: $primary-color !important;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 2px;
+                        background: $primary-color;
+                        margin: auto;
+                        left: 0;
+                        right: 0;
+                        position: relative;
+                        @include transition(0.4s);
+                    }
+                }
+            }
+        }
+        .search,
+        .shopping-cart {
+            i {
+                color: $secondery-color;
+            }
+        }
+        .shopping-cart {
+            padding-right: 0px;
+            border-left: 1px solid rgba(6, 48, 59, 0.1);
+            .number-cart {
+                position: relative;
+                bottom: 14px;
+                left: -4px;
+                width: 20px;
+                text-align: center;
+                @include font(11, 400);
+                color: $font-color-white;
+                background: $primary-color;
+                border-radius: 50%;
+                padding: 2px 4px 2px 4px;
+            }
+        }
+    }
+}
+//Go to top button
+.top-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    z-index: 9999999999;
+    background-color: $primary-color;
+    color: $font-color-white;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+//widget
+.widget {
+    .container {
+        padding: 20px 0px;
+        .info-widget {
+            .header-widget {
+                display: table-cell;
+                position: relative;
+                vertical-align: middle;
+                height: 100%;
+                margin: 0;
+                padding-right: 0;
+                .header-widget-main {
+                    margin-right: 50px;
+                    .header-icon {
+                        display: table-cell;
+                        vertical-align: middle;
+                        padding: 0;
+                        text-align: left;
+                        .icon {
+                            background-color: $bg-color-white;
+                            -webkit-box-shadow: 0 0 10px 0 rgba(3, 59, 74, 0.1);
+                            -moz-box-shadow: 0 0 10px 0 rgba(3, 59, 74, 0.1);
+                            box-shadow: 0 0 10px 0 rgba(3, 59, 74, 0.1);
+                            width: 50px;
+                            height: 50px;
+                            text-align: center;
+                            float: none;
+                            i {
+                                color: $primary-color;
+                                @include font(23, 400);
+                                line-height: 50px;
+                            }
+                        }
+                    }
+                    .header-content {
+                        display: table-cell;
+                        vertical-align: middle;
+                        padding: 0;
+                        text-align: left;
+                        padding-left: 18px;
+                        h3 {
+                            @include font(16, 500);
+                            line-height: 21px;
+                            color: #033b4a;
+                            margin: {
+                                top: 0;
+                                bottom: 0;
+                            }
+                        }
+                        h5 {
+                            margin: {
+                                top: 0;
+                                bottom: 0;
+                            }
+                            @include font(16, 500);
+                            color: #9dabaf;
+                            line-height: 23px;
+                        }
+                    }
+                }
+            }
+        }
+        .widget-phone {
+            position: absolute;
+            background-color: $primary-color;
+            padding-left: 20px;
+            float: right;
+            line-height: 48px;
+            color: #fff;
+            left: 70%;
+            top: 42px;
+            @include font(16, 500);
+            &::after {
+                content: "";
+                width: 5000px;
+                height: 100%;
+                background-color: #00d6a3;
+                left: 100%;
+                top: 0px;
+                position: absolute;
+            }
+            .icon {
+                padding-right: 8px;
+                i {
+                    @include transform(rotate(90deg));
+                }
+            }
+        }
+    }
+}
+//Curosel
+.hero-slider {
+    .carousel {
+        .carousel-inner {
+            .carousel-item {
+                padding: 180px 0px;
+            }
+            .slider-1,
+            .slider-2 {
+                .slider-paralax-wrap {
+                    span,
+                    p {
+                        color: #fff;
+                        @include font(20, 400);
+                        vertical-align: middle;
+                    }
+                    h1 {
+                        color: #fff;
+                        font-size: 75px;
+                        margin-bottom: 2px;
+                        line-height: 70px;
+                    }
+                    .btn {
+                        @extend .button-basic;
+                    }
+                    .content {
+                        display: table-cell;
+                        vertical-align: middle;
+                        padding: 0;
+                        padding-right: 18px;
+                        h3 {
+                            @include font(16, 500);
+                            line-height: 21px;
+                            color: $font-color-white;
+                            margin: {
+                                top: 0;
+                                bottom: 0;
+                            }
+                        }
+                        h5 {
+                            @include font(13, 400);
+                            line-height: 23px;
+                            color: $font-color-white;
+                            margin: {
+                                top: 0;
+                                bottom: 0;
+                            }
+                        }
+                    }
+                    .icon {
+                        animation: fadein 4s;
+                        opacity: 1;
+                    }
+                }
+            }
+            .slider-1 {
+                background: {
+                    image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/revslider/home-mainclassic-slider/mainslider-bg001.jpg);
+                    size: cover;
+                    repeat: no-repeat;
+                }
+                height: 750px;
+                .slider-paralax-wrap {
+                    .btn {
+                        @extend .secondary-button;
+                    }
+                    p {
+                        color: $font-color-white;
+                        @include font(16, 400);
+                    }
+                    .content {
+                        text-align: right;
+                        width: 300px;
+                        overflow: hidden;
+                        max-width: 300px;
+                        h3,
+                        h5 {
+                            animation: slide-left-2 4s;
+                        }
+                    }
+
+                    .icon {
+                        background-color: $primary-color;
+                        width: 50px;
+                        height: 50px;
+                        text-align: center;
+                        float: none;
+                        i {
+                            color: $font-color-white;
+                            font-size: 23px;
+                            line-height: 50px;
+                        }
+                    }
+                }
+                .animation-1 {
+                    width: 350px;
+                    overflow: hidden;
+                    max-width: 350px;
+                    height: 50px;
+                    span {
+                        animation-name: slider-1-animation-1;
+                        animation-duration: 2s;
+                        text-align: right;
+                    }
+                }
+                .animation-2 {
+                    width: 100%;
+                    overflow: hidden;
+                    max-width: 100%;
+                    h1 {
+                        animation-name: slider-1-animation-2;
+                        animation-duration: 2s;
+                    }
+                }
+                .animation-3 {
+                    height: 100px;
+                    overflow: hidden;
+                    max-height: 100px;
+                    p,
+                    a {
+                        animation-name: slider-1-animation-3;
+                        animation-duration: 3s;
+                    }
+                }
+            }
+            .slider-2 {
+                background: {
+                    image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/revslider/home-mainclassic-slider/mainslider-bg002.jpg);
+                    size: cover;
+                    repeat: no-repeat;
+                }
+                height: 750px;
+                .slider-paralax-wrap {
+                    .btn-1 {
+                        @extend .secondary-button;
+                    }
+                    .btn-2 {
+                        @extend .primary-button;
+                    }
+                    .content {
+                        text-align: left;
+                        width: 300px;
+                        overflow: hidden;
+                        max-width: 300px;
+                        h3,
+                        h5 {
+                            animation: slide-right-2 4s;
+                        }
+                    }
+                    .icon {
+                        @include border(1px, rgba(255, 255, 255, 0.726));
+                        border-radius: 50%;
+                        background: none;
+                        width: 60px;
+                        height: 60px;
+                        padding: 4px;
+                        .circle {
+                            background-color: $primary-color;
+                            width: 50px;
+                            height: 50px;
+                            text-align: center;
+                            float: none;
+                            border-radius: 50%;
+                            @include transition(0.4s);
+                            &:hover {
+                                background-color: #00d6a442;
+                            }
+                            i {
+                                @include font(16, 400);
+                                line-height: 50px;
+                                color: $font-color-white;
+                            }
+                        }
+                    }
+                }
+                .animation-1 {
+                    width: 100%;
+                    overflow: hidden;
+                    max-width: 100%;
+                    h1 {
+                        animation-name: slider-2-animation-1;
+                        animation-duration: 2s;
+                    }
+                }
+                .animation-2 {
+                    h1 {
+                        animation-name: slider-2-animation-1;
+                        animation-duration: 3s;
+                    }
+                }
+                .animation-3 {
+                    height: 100px;
+                    overflow: hidden;
+                    max-height: 100px;
+                    p,
+                    .btn {
+                        animation-name: slider-2-animation-3;
+                        animation-duration: 3s;
+                    }
+                }
+            }
+        }
+    }
+}
+//Our Medical
+.our-medical {
+    .container {
+        .row {
+            padding: 120px 0;
+            .col-lg-6 {
+                .our-medical-img {
+                    height: 500px;
+                }
+                .get-it-know {
+                    margin-top: -54px;
+                }
+                .get-it-know-btn {
+                    @extend .primary-button;
+                    border-radius: 0;
+                    width: 41%;
+                    padding: 17px 16px;
+                    text-align: left;
+                    @include font(13, 400);
+                    z-index: 1;
+                    &:hover {
+                        color: $secondery-color !important;
+                        background: $primary-color;
+                    }
+                }
+                .our-medical-text {
+                    padding-left: 20px;
+                    span {
+                        @include font(16, 600);
+                    }
+                    h1 {
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        margin-bottom: 30px;
+                    }
+                    h5 {
+                        line-height: 25px;
+                        color: #1b3a42;
+                        @include font(20, 600);
+                    }
+                    .d-table {
+                        margin: 16px 0px;
+                        ul {
+                            list-style: none;
+                            li {
+                                padding-bottom: 7px;
+                                color: $font-color-1;
+                                list-style: 25px;
+                                @include font(15, 500);
+                                i {
+                                    background: $primary-color;
+                                    height: 18px;
+                                    width: 18px;
+                                    border-radius: 50%;
+                                    padding: 4px;
+                                    color: $font-color-white;
+                                    margin-right: 8px;
+                                    @include font(12, 400);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .background-layer-image {
+            background: {
+                image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/row-bg-pt.png?id=3223);
+                position: right top !important;
+                repeat: repeat;
+            }
+            opacity: 0.97;
+            margin-left: -500px;
+            height: 100%;
+            width: 800px;
+            position: absolute;
+        }
+    }
+}
+//Our Services
+.our-services {
+    padding: 80px;
+    background: #f9fafa;
+    .container {
+        .row {
+            .col-lg-12 {
+                .card-group {
+                    .card {
+                        margin: 0 15px;
+                        box-shadow: 0 0 15px 0 rgba(41, 61, 88, 0.1);
+                        .card-body {
+                            .card-title {
+                                @include font(20, 600);
+                                line-height: 26px;
+                                color: $secondery-color;
+                            }
+                            p {
+                                @include font(15, 400);
+                                line-height: 25px;
+                                color: $font-color-1;
+                            }
+                            a {
+                                @include font(13, 600);
+                                color: $primary-color;
+                                @include transition(0.4s);
+                                &:hover {
+                                    text-decoration: none;
+                                    color: $secondery-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Need A Doctor
+.need-a-doctor {
+    position: relative;
+    background: {
+        image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/01/row-bg-one.jpg?id=2573);
+        repeat: no-repeat;
+        size: cover;
+        attachment: fixed;
+    }
+    .container {
+        padding: 120px;
+        .row {
+            .col-lg-12 {
+                text-align: center;
+                h5 {
+                    color: $primary-color;
+                    line-height: 30px;
+                    @include font(25, 400);
+                }
+                h2 {
+                    color: $font-color-white;
+                    line-height: 50px;
+                    @include font(40, 600);
+                }
+                h3 {
+                    color: $font-color-white;
+                    line-height: 36px;
+                    @include font(28, 400);
+                }
+                .appoinment-btn {
+                    @extend .button-basic;
+                    @extend .primary-button;
+                }
+            }
+        }
+    }
+}
+//Our Team
+.our-team {
+    padding: 80px;
+    .container {
+        .row {
+            .col-lg-1 {
+                .carousel-control-prev,
+                .carousel-control-next {
+                    @include border(1px, $secondery-color);
+                    width: 32px;
+                    height: 32px;
+                    color: $secondery-color;
+                    background: transparent;
+                    cursor: pointer;
+                    @include transition(0.2s);
+                    margin: 0 10px;
+                    &:hover {
+                        border: none;
+                        background: $primary-color;
+                        color: $font-color-white;
+                    }
+                }
+            }
+            .col-lg-12 {
+                .card-group {
+                    .card {
+                        margin: 5px 15px;
+                        box-shadow: 0 0 15px 4px rgba(41, 61, 8, 0.1);
+                        &:hover {
+                            background: $primary-color;
+                            transition: background 0.5s;
+                        }
+                        .position-relative {
+                            .card-img-top {
+                                @include border(8px, $font-color-white);
+                                border-bottom: none;
+                            }
+                            .card-overlay {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                opacity: 0;
+                                content: "";
+                                transition: opacity 0.5s;
+                                background-color: rgba(3, 59, 74, 0.9);
+                                @include border(8px, $primary-color);
+                                border-bottom: none;
+                                z-index: 999;
+                                .card-overlay-icon {
+                                    a {
+                                        position: absolute;
+                                        text-align: center;
+                                        height: 35px;
+                                        width: 35px;
+                                        @include font(16, 400);
+                                        color: $font-color-white;
+                                        background-color: $primary-color;
+                                        top: 50%;
+                                        left: 50%;
+                                        margin-top: -18px;
+                                        margin-left: -17px;
+                                        line-height: 35px;
+                                        display: inline-block;
+                                        border-radius: 0%;
+                                        @include transition(0.4s);
+                                        @include transform(scale(0));
+                                        &:hover {
+                                            color: $primary-color;
+                                            background-color: $bg-color-white;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            .card-overlay {
+                                opacity: 1 !important;
+                            }
+                            .card-overlay-icon {
+                                a {
+                                    @include transform(scale(1) !important);
+                                }
+                            }
+                            .card-body {
+                                .card-text,
+                                .card-title {
+                                    color: $font-color-white;
+                                }
+                            }
+                        }
+                        .card-body {
+                            .card-text {
+                                @include font(14, 600);
+                                color: $font-color-1;
+                            }
+                            .card-title {
+                                @include font(20, 600);
+                                color: $secondery-color;
+                                display: block;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//testimonial
+.testimonial {
+    position: relative;
+    background: {
+        image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/01/row-bg-img2.jpg?id=2632);
+        repeat: no-repeat;
+        size: cover;
+    }
+    .container {
+        padding: 80px 80px 190px 80px;
+        .row {
+            .col-lg-12 {
+                .heading {
+                    span {
+                        @include font(16, 500);
+                        color: $font-color-1;
+                        text-transform: uppercase;
+                        line-height: 24px;
+                    }
+                    h3 {
+                        color: $font-color-white;
+                        @include font(35, 600);
+                        line-height: 42px;
+                    }
+                }
+                .carousel {
+                    margin-top: 25px;
+                    .carousel-inner {
+                        .carousel-item {
+                            img {
+                                border-radius: 50%;
+                                margin-bottom: 20px;
+                            }
+                            .comment {
+                                color: $font-color-1;
+                                @include font(18, 600);
+                                font-family: "Ubuntu", sans-serif;
+                                line-height: 28px;
+                                margin-bottom: 18px;
+                            }
+                            .client-ratting-star {
+                                i {
+                                    color: #fd4;
+                                    @include font(12, 0);
+                                }
+                            }
+                            .client-info {
+                                h5 {
+                                    @include font(18, 600);
+                                    color: $primary-color;
+                                    line-height: 28px;
+                                    margin-bottom: -6px;
+                                }
+                                span {
+                                    color: $font-color-white;
+                                    @include font(14, 300);
+                                }
+                            }
+                        }
+                    }
+                    .testimonial-control-prev,
+                    .testimonial-control-next {
+                        position: absolute;
+                        top: 40px !important;
+                        display: flex;
+                        align-items: center;
+                        -webkit-box-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        width: 5% !important;
+                        font-size: 20px;
+                        i {
+                            color: #fff;
+                            font-weight: 300;
+                            &:hover {
+                                color: $primary-color;
+                                text-decoration: none;
+                            }
+                        }
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                    .testimonial-control-prev {
+                        left: 40% !important;
+                    }
+                    .testimonial-control-next {
+                        right: 40% !important;
+                    }
+                }
+            }
+        }
+    }
+}
+//Appoinment form
+.appointment-form {
+    background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 80px 0px;
+    .background-layer-image {
+        background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+        background-size: cover;
+        opacity: 0.97;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -11;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+    }
+    .container {
+        margin-top: -190px;
+        background: #fff;
+        box-shadow: 0 0 15px 0 rgba(41, 61, 88, 0.1);
+        .row {
+            .col-lg-5 {
+                padding: 0;
+            }
+            .col-lg-7 {
+                padding: 50px 70px 58px 70px;
+                .form {
+                    .form-title {
+                        h1 {
+                            @include font(35px, 600);
+                            line-height: 42px;
+                            color: $secondery-color;
+                        }
+                        p {
+                            color: $font-color-1;
+                            @include font(15, 400);
+                        }
+                    }
+                    .form-body {
+                        margin-top: 30px;
+                        form {
+                            .row {
+                                .col-md-6 {
+                                    position: relative;
+                                    margin-bottom: 15px;
+                                    padding: 5px 15px 0 15px;
+                                    input,
+                                    select {
+                                        padding: 10px 15px 10px 33px;
+                                        @include font(14, 500);
+                                        @include border(1px, transparent);
+                                        background-color: #f9fafa;
+                                        width: 100%;
+                                        color: #666666;
+                                        letter-spacing: 1px;
+
+                                        &:focus {
+                                            outline: none;
+                                        }
+                                    }
+                                    i {
+                                        position: absolute;
+                                        left: 24px;
+                                        top: 21px;
+                                        opacity: 0.9;
+                                        font-size: 14px;
+                                        z-index: 1;
+                                        color: $primary-color;
+                                    }
+                                }
+                                .btn-submit {
+                                    background: $primary-color;
+                                    color: $font-color-white;
+                                    @include font(14, 500);
+                                    padding: 10px 25px;
+                                    width: 100%;
+                                    margin-top: 30px;
+                                    border-radius: 0;
+                                    @include transition(0.4s);
+                                    &:hover {
+                                        background: $secondery-color;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//we provide
+.we-provide {
+    padding: 80px 0;
+    background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 80px 0px;
+    .background-layer-image {
+        background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+        background-size: cover;
+        opacity: 0.97;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -11;
+        background-repeat: no-repeat;
+        top: 0;
+        left: 0;
+    }
+    .container {
+        .row {
+            .col-lg-7 {
+                h4 {
+                    @include font(20, 600);
+                    color: $secondery-color;
+                    line-height: 28px;
+                }
+                .read-more-link {
+                    color: $secondery-color;
+                    text-decoration: underline;
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+//counter
+.counter {
+    background: $primary-color;
+    .container {
+        .row {
+            .col-lg-3 {
+                padding: 60px;
+                text-align: center;
+                i {
+                    display: block;
+                    color: $font-color-white;
+                    font-size: 46px;
+                    margin-bottom: 15px;
+                }
+                h3 {
+                    color: #fff;
+                    @include font(42, 600);
+                }
+                h5 {
+                    @include font(18, 400);
+                    color: rgba(255, 255, 255, 0.8);
+                }
+            }
+            .border-right {
+                border-color: rgba(255, 255, 255, 0.23) !important;
+            }
+        }
+    }
+}
+.blog {
+    padding: 80px;
+    .container {
+        .row {
+            .card-group {
+                .card {
+                    margin-bottom: 30px;
+                    padding: 0 15px;
+                    box-shadow: rgba(255, 255, 255, 0.95);
+                    .row {
+                        .col-lg-5 {
+                            margin: 0;
+                            padding: 0;
+                            .card-img-top {
+                                height: 100%;
+                                max-height: 800;
+                            }
+                        }
+                        .col-lg-7 {
+                            margin: 0;
+                            padding: 0;
+                            .card-body {
+                                padding: 20px 25px 20px 25px !important;
+                                .card-title {
+                                    margin-top: 0;
+                                    margin-bottom: 4px;
+                                    a {
+                                        color: $secondery-color;
+                                        @include font(22, 500);
+                                        line-height: 29px;
+                                        &:hover {
+                                            color: $primary-color;
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+                                span {
+                                    font-size: 12px;
+                                    margin: 0 10px 5px 0;
+                                    color: $font-color-1;
+                                    i {
+                                        color: $primary-color;
+                                        padding-right: 4px;
+                                    }
+                                }
+                                p {
+                                    @include font(15, 400);
+                                    color: $font-color-1;
+                                    font-family: "Ubunto", sans-serif;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

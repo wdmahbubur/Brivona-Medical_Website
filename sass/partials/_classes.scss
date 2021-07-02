@@ -1,0 +1,19 @@
+.primary-button{
+    color: $font-color-white;
+    background: $primary-color;
+    @include transition(.2s);
+    &:hover{
+        background: $bg-color-white;
+        color: $secondery-color-2;
+    }
+}
+.secondary-button{
+    color: $font-color-white;
+    background: transparent;
+    @include transition(.2s);
+    @include border(1px, $font-color-white);
+    &:hover{
+        background: $bg-color-white;
+        color: $secondery-color-2;
+    }
+}

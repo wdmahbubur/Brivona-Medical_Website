@@ -1,0 +1,20 @@
+@mixin border($width, $color) {
+    border: $width solid $color;
+}
+
+@mixin transform($value) {
+    -webkit-transform: $value;
+    -ms-transform: $value;
+    -moz-transform: $value;
+    transform: $value; 
+}
+
+@mixin transition($duration) {
+    -webkit-transition: all $duration ease-in;
+    -moz-transition: all $duration ease-in;
+    transition: all $duration ease-in;
+}
+@mixin font($size, $weight) {
+    font-size: $size+px;
+    font-weight: $weight;
+}
