@@ -436,7 +436,7 @@ body {
             }
             .slider-1 {
                 background: {
-                    image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/revslider/home-mainclassic-slider/mainslider-bg001.jpg);
+                    image: url(../img/mainslider-bg001.jpg);
                     size: cover;
                     repeat: no-repeat;
                 }
@@ -506,7 +506,7 @@ body {
             }
             .slider-2 {
                 background: {
-                    image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/revslider/home-mainclassic-slider/mainslider-bg002.jpg);
+                    image: url(../img/mainslider-bg002.jpg);
                     size: cover;
                     repeat: no-repeat;
                 }
@@ -529,6 +529,7 @@ body {
                         }
                     }
                     .icon {
+                        margin-left: 50px;
                         @include border(1px, rgba(255, 255, 255, 0.726));
                         border-radius: 50%;
                         background: none;
@@ -651,7 +652,7 @@ body {
         }
         .background-layer-image {
             background: {
-                image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/row-bg-pt.png?id=3223);
+                image: url(../img/row-bg-pt.png);
                 position: right top !important;
                 repeat: repeat;
             }
@@ -705,7 +706,7 @@ body {
 .need-a-doctor {
     position: relative;
     background: {
-        image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/01/row-bg-one.jpg?id=2573);
+        image: url(../img/row-bg-one.jpg);
         repeat: no-repeat;
         size: cover;
         attachment: fixed;
@@ -852,7 +853,7 @@ body {
 .testimonial {
     position: relative;
     background: {
-        image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/01/row-bg-img2.jpg?id=2632);
+        image: url(../img/row-bg-img2.jpg);
         repeat: no-repeat;
         size: cover;
     }
@@ -944,13 +945,13 @@ body {
 }
 //Appoinment form
 .appointment-form {
-    background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+    background-image: url(../img/rowbg-seven.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 80px 0px;
     .background-layer-image {
-        background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+        background-image: url(../img/rowbg-seven.jpg);
         background-size: cover;
         opacity: 0.97;
         height: 100%;
@@ -1039,13 +1040,13 @@ body {
 //we provide
 .we-provide {
     padding: 80px 0;
-    background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+    background-image: url(../img/rowbg-seven.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 80px 0px;
     .background-layer-image {
-        background-image: url(http://brivona.themetechmount.com/brivona-onepage/wp-content/uploads/sites/13/2019/06/rowbg-seven.jpg);
+        background-image: url(../img/rowbg-seven.jpg);
         background-size: cover;
         opacity: 0.97;
         height: 100%;
