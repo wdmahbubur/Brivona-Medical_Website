@@ -1196,11 +1196,22 @@ body {
             .col-lg-4 {
                 .d-table {
                     .table-cell {
-                        span {
+                        vertical-align: top;
+                        padding: 0 10px;
+                        .icon {
                             border: 2px solid #fff;
-                            i{
+                            padding: 10px 14px;
+                            i {
                                 font-size: 18px;
                             }
+                        }
+                        h4 {
+                            @include font(20, 500);
+                            line-height: 0;
+                            margin-bottom: 10px;
+                        }
+                        small {
+                            font-size: 14px;
                         }
                     }
                 }

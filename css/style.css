@@ -1261,10 +1261,27 @@ body {
   color: #fff;
 }
 
-.contact-details .container .row .col-lg-4 .d-table .table-cell span {
-  border: 2px solid #fff;
+.contact-details .container .row .col-lg-4 .d-table .table-cell {
+  vertical-align: top;
+  padding: 0 10px;
 }
 
-.contact-details .container .row .col-lg-4 .d-table .table-cell span i {
+.contact-details .container .row .col-lg-4 .d-table .table-cell .icon {
+  border: 2px solid #fff;
+  padding: 10px 14px;
+}
+
+.contact-details .container .row .col-lg-4 .d-table .table-cell .icon i {
   font-size: 18px;
+}
+
+.contact-details .container .row .col-lg-4 .d-table .table-cell h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 0;
+  margin-bottom: 10px;
+}
+
+.contact-details .container .row .col-lg-4 .d-table .table-cell small {
+  font-size: 14px;
 }
