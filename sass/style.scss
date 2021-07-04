@@ -1105,6 +1105,7 @@ body {
         }
     }
 }
+//blog
 .blog {
     padding: 80px;
     .container {
@@ -1176,6 +1177,29 @@ body {
                                     color: $font-color-1;
                                     font-family: "Ubunto", sans-serif;
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//Start Footer
+//contact-details
+.contact-details {
+    padding: 80px;
+    background-color: $primary-color;
+    color: $font-color-white;
+    .container {
+        .row {
+            .col-lg-4 {
+                .d-table {
+                    .table-cell {
+                        span {
+                            border: 2px solid #fff;
+                            i{
+                                font-size: 18px;
                             }
                         }
                     }

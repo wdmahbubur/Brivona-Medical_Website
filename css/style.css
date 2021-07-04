@@ -1254,3 +1254,17 @@ body {
   color: #9dabaf;
   font-family: "Ubunto", sans-serif;
 }
+
+.contact-details {
+  padding: 80px;
+  background-color: #00d6a3;
+  color: #fff;
+}
+
+.contact-details .container .row .col-lg-4 .d-table .table-cell span {
+  border: 2px solid #fff;
+}
+
+.contact-details .container .row .col-lg-4 .d-table .table-cell span i {
+  font-size: 18px;
+}
