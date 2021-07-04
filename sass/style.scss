@@ -206,8 +206,8 @@ body {
         }
         .navbar-nav {
             .nav-item {
-                padding: 0px 16px;
-                @include font(16, 700);
+                padding: 0px 14px;
+                @include font(16, 600);
                 a {
                     color: #033b4a !important;
                     &::after {
@@ -247,26 +247,9 @@ body {
                 }
             }
         }
-        .search,
-        .shopping-cart {
+        .search {
             i {
                 color: $secondery-color;
-            }
-        }
-        .shopping-cart {
-            padding-right: 0px;
-            border-left: 1px solid rgba(6, 48, 59, 0.1);
-            .number-cart {
-                position: relative;
-                bottom: 14px;
-                left: -4px;
-                width: 20px;
-                text-align: center;
-                @include font(11, 400);
-                color: $font-color-white;
-                background: $primary-color;
-                border-radius: 50%;
-                padding: 2px 4px 2px 4px;
             }
         }
     }
