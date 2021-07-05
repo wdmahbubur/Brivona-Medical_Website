@@ -79,13 +79,13 @@
                             <a class="nav-link" href="#services">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Testimonial</a>
+                            <a class="nav-link" href="#testimonials">Testimonial</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact Us</a>
+                            <a class="nav-link" href="#appointment-form">Contact Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="#blog">Blog</a>
                         </li>
                     </ul>
                     <a class="search pr-4" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -96,7 +96,7 @@
     <section class="container-fluid">
         <main>
             <!--top button-->
-            <div class="top-button">
+            <div class="top-button" id="go-to-top" onclick="topFunction()">
                 <i class="fa fa-arrow-up" aria-hidden="true"></i>
             </div>
             <!--Information widget-->
@@ -490,7 +490,7 @@
                 </div>
             </div>
             <!--Testimonial-->
-            <div class="row testimonial">
+            <div class="row testimonial" id="testimonials">
                 <div class="overlay"></div>
                 <div class="col-12">
                     <div class="container">
@@ -583,7 +583,7 @@
                 </div>
             </div>
             <!--Make an appointment-->
-            <div class="row appointment-form">
+            <div class="row appointment-form" id="appointment-form">
                 <div class="col-12">
                     <div class="container">
                         <div class="row">
@@ -741,7 +741,7 @@
 
             </div>
             <!--Blog-->
-            <div class="row blog">
+            <div class="row blog" id="blog">
                 <div class="col-12">
                     <div class="container">
                         <div class="row">
@@ -1005,9 +1005,28 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="subscribe-form">
+                                    <h3>Newsletter</h3>
+                                    <form action="">
+                                        <input type="email" placeholder="Enter Your Email">
+                                        <button class="btn" type="submit" required>
+                                            <i class="far fa-envelope" aria-hidden="true"></i>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
 
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyright-footer">
+                <div class="col-12">
+                    <span>Copyright &copy; 2021 Briovona</span>
+                    <div>
+                        <a href="#">About Us</a> |
+                        <a href="#">Services</a> |
+                        <a href="#">Privacy</a>
                     </div>
                 </div>
             </div>

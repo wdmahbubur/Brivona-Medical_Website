@@ -5,6 +5,22 @@ var carousel = new bootstrap.Carousel(myCarousel, {
 })*/
 $(document).ready(function () {
 
+
+  //Check to see if the window is top if not then display button
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $('#go-to-top').fadeIn();
+    } else {
+      $('#go-to-top').fadeOut();
+    }
+  });
+
+  //Click event to scroll to top
+  $('#go-to-top').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 100);
+    return false;
+  });
+
   $('#doctor-carousel').slick({
     dots: false,
     infinite: true,
@@ -69,7 +85,6 @@ $(window).scroll(function () {
           },
           complete: function () {
             $this.text(this.countNum);
-            //alert('finished');
           }
 
         });

@@ -29,6 +29,10 @@
   font-family: "Saira", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -299,6 +303,8 @@ body {
   display: inline-block;
   text-align: center;
   cursor: pointer;
+  display: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .widget .container {
@@ -1412,4 +1418,62 @@ body {
 
 .footer .container .row .col-lg-3 .our-services-footer ul li a:hover {
   color: #00d6a3;
+}
+
+.footer .container .row .col-lg-3 .subscribe-form {
+  margin-top: 20px;
+}
+
+.footer .container .row .col-lg-3 .subscribe-form h3 {
+  margin-bottom: 20px;
+}
+
+.footer .container .row .col-lg-3 .subscribe-form form {
+  position: relative;
+}
+
+.footer .container .row .col-lg-3 .subscribe-form form input[type="email"] {
+  background-color: rgba(255, 255, 255, 0.09);
+  padding: 10px 15px;
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: 0;
+  color: white;
+  font-size: 13px;
+}
+
+.footer .container .row .col-lg-3 .subscribe-form form .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 15px;
+  background-color: #00d6a3;
+  color: #fff;
+  border-radius: 0;
+  font-size: 16px;
+  height: 45px;
+  width: 50px;
+}
+
+.copyright-footer {
+  font-family: "Saira", sans-serif;
+  padding: 20px;
+  background-color: #013340;
+  text-align: center;
+}
+
+.copyright-footer span {
+  color: #9dabaf;
+  font-size: 15px;
+}
+
+.copyright-footer div {
+  color: #fff;
+}
+
+.copyright-footer div a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 6px;
 }
